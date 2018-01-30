@@ -9,5 +9,6 @@
     || (command -v emerge && emerge -q --sync && emerge -q -a n =dev-lang/python-2\* gentoolkit) \
     || (command -v dnf && dnf -q makecache fast && dnf -yq install python python-dnf) \
     || (command -v zypper && zypper -q refresh && zypper -nq install -l python) \
+    || (command -v apk && apk -U add python) \
     || (echo This platform is not supported. 1>&2 && exit 1)
 
